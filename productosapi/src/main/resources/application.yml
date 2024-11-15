@@ -1,0 +1,39 @@
+datasource:
+  url: jdbc:mysql://localhost:3306/alvarezlucas02
+  username: alvarezlucas02
+  password: GUEX.1435
+  driver-class-name: com.mysql.cj.jdbc.Driver
+  initialization-mode: always
+
+jpa:
+  show-sql: true
+  open-in-view: false
+  hibernate:
+    ddl-auto: update
+  database-platform: org.hibernate.dialect.MySQLDialect
+
+sql:
+  init:
+    mode: always
+    platform: mysql
+    schema-locations: classpath:schema.sql
+    data-locations: classpath:data.sql
+
+server:
+  port: 8089
+  compression:
+    enabled: true
+
+user:
+  timezone: 'UTC'
+
+logging:
+  config: classpath:log4j2.xml
+
+# Swagger/OpenAPI Configuration
+springdoc:
+  api-docs:
+    enabled: true # Habilita la generación de la documentación OpenAPI
+  swagger-ui:
+    enabled: true # Habilita Swagger UI
+    path: /swagger-ui/index.html # Ruta personalizada para acceder al Swagger UI
